@@ -4,6 +4,9 @@
 <% for entry in @entries %>
   <h3><%= entry["title"] %></h3>
   <h4><%= entry["occurred_on"] %></h4>
+  <% if entry.uploaded_image.present? %>
+  <img src="<%= url_for(entry.uploaded_image)%>">
+  <%end%>
   <p><%= entry["description"] %></p>
 <% end %>
 
